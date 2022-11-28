@@ -3,14 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-    after_create :welcome_send
 
-  has_many :kitties
-
-    def welcome_send
-      UserMailer.welcome_email(self).deliver_now
-    end
-
-    
-  end
-
+  has_many :sales
+end
