@@ -12,7 +12,7 @@ gem 'mailjet'
 gem "letter_opener", group: :development
 gem 'devise'
 gem 'stripe'
- gem "rspec-rails"
+gem "rspec-rails"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
