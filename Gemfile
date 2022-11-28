@@ -1,18 +1,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-group :development do
-  gem "better_errors"
-  gem "binding_of_caller"
-end
-gem "table_print" 
-ruby "3.0.0"
-gem 'dotenv-rails'
-gem 'mailjet'
-gem "letter_opener", group: :development
-gem 'devise'
-gem 'stripe'
-gem "rspec-rails"
+ruby "3.0.1"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
@@ -29,13 +19,24 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
-#gem "turbo-rails"
+gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+gem 'rspec'
+gem 'pry'
+gem 'rubocop'
+gem 'dotenv'
+gem "table_print" 
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
+gem 'bcrypt'
+gem 'devise'
+gem 'better_errors'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
