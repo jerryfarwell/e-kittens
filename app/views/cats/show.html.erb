@@ -1,0 +1,14 @@
+<br><br><br><br><br><br>
+
+
+<div class="showcat" style="text-align: center">
+<%= image_tag "cat#{@cat.id}.jpg", width: 480, height: 300 %><br><br>
+<h3>nom :  <%= @cat.name %></h3> <br>
+<h3>âge : <%= @cat.age %> mois </h3><br>
+
+<h3>description : </h3><%= @cat.description %><br><br>
+<p id="demo"></p>
+<button type="submit" class="btn btn-success" onclick='document.getElementById("demo").innerHTML = "votre article a bien été ajouté au panier<br>merci pour votre confiance"'>Ajouter au panier</button><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+

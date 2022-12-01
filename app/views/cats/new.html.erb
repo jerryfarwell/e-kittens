@@ -1,0 +1,20 @@
+<h1>Cats#new</h1>
+<p>Find me in app/views/cats/new.html.erb</p>
+
+
+	      <%= form_tag(cats_path, method: :post, class: "form") do %>
+	        <label for="name">nom :<br>
+	        <%= text_field_tag  :name %><br><br>
+
+	        <label for="color">couleur :<br>
+	        <%= text_field_tag  :color %><br><br>
+	
+	        <label for="age">age : <br>
+	        <%= text_field_tag  :age %><br><br>
+	
+	       <label for="description">description :<br>
+	        <%= text_area_tag  :description %><br><br>
+	
+	        <%= submit_tag 'create', :name => 'commit'%>
+	      <% end %>
+	</div>
