@@ -13,3 +13,305 @@
  *= require_tree .
  *= require_self
  */
+
+
+ * {
+
+    margin: 0;
+
+    padding: 0;
+
+    text-decoration: none;
+
+    list-style: none;
+    
+
+}
+
+body {
+
+background-image: url("https://www.whiskas.fr/cdn-cgi/image/format%3Dauto%2Cq%3D90/sites/g/files/fnmzdf2096/files/2022-09/Kitten_0.jpg");
+
+font-family: "Poppins";
+
+font-size: 1.2em;
+
+backdrop-filter: blur(5px); /* pour flouter */
+
+filter: brightness(100%); /* pour la luminosité */
+
+background-repeat: no-repeat;
+
+background-position: 50% 0;
+
+background-size: 130em;
+
+opacity: 1;
+overflow-x: hidden;
+
+}
+
+.cart{
+
+
+display: flex;
+margin-inline-end: 0%;
+position: relative;
+top: -30px;
+}
+
+
+header {
+
+height: 100vh; /* "vh" viewport height represente la hauteur de la fenetre */
+
+width: 100vw; /* "vw" viewport width represente la longueur de la fenetre */
+color: black;
+}
+
+
+
+a:link{ /* permet de retirer le soulignement des liens*/
+
+text-decoration:none;
+
+}
+
+
+.navbar a{
+
+color: black;
+font-size: 1.4em;
+font-weight:normal;
+
+}
+
+
+
+.navbar a:hover{
+
+color: rgba(255, 255, 255, 1);
+
+text-decoration: underline;
+
+}
+
+
+
+.navbar .logo{
+
+font-size: 2em;
+
+font-weight: bold;
+
+margin-left: 5%;
+
+}
+
+
+
+.navbar .nav-links ul{
+
+display: flex;
+
+}
+
+
+
+.navbar .nav-links ul li{
+
+margin: 0 25px;
+
+}
+
+.navbar .menu-hamburger{
+
+display: none;
+
+width: 35px;
+
+position: absolute;
+
+top: 50px;
+
+right: 50px;
+
+}
+
+img{ 
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	-ms-filter: grayscale(1);
+  -webkit-transition:all 1s;
+  transition:all 1s;
+}
+
+      img:hover{
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+	-moz-filter: grayscale(0);
+	-o-filter: grayscale(0);
+	-ms-filter: grayscale(0);
+}
+
+      .card:hover{
+    transform: scale(1.05);
+    -webkit-box-shadow: -7px 7px 25px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -7px 7px 25px 0px rgba(0,0,0,0.75);
+    box-shadow: -7px 7px 25px 0px rgba(0,0,0,0.75);
+    color: black;
+
+}
+
+
+      .container{
+width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+max-width: 100%;
+color:black;
+display: flex;
+
+}
+
+      .card-clic{
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}
+
+      .card-title{
+        line-height: 1.5em;
+        color: black;
+      }
+
+      .card-text {
+  font-size: 1rem;
+  line-height: .5em;
+  color: black;
+}
+
+     .cart{
+      justify-content: right;
+     }
+
+
+footer{
+    margin-left: 30%;
+    justify-content: center;
+}
+footer .container{
+  overflow: hidden;
+}
+.text-center{
+    margin-right: 20%;
+}
+
+
+
+@media screen and (max-width: 900px) {
+
+.navbar{
+
+padding: 0;
+
+}
+
+
+
+.navbar .menu-hamburger{
+
+display: block;
+
+}
+
+.nav-links {
+
+top: 0;
+
+left: 0;
+
+position: absolute;
+
+width: 100%;
+
+height: 100vh;
+
+display: flex;
+
+justify-content: center;
+
+align-items: center;
+
+background-color: rgba(195, 111, 0, 0.660);
+
+backdrop-filter: blur(8px);
+
+margin-left: -100%; /* elle est en lien avec le margin-left du mobile menu. Elle permet de cacher le menu en le sortant de l'écran*/
+
+transition: all 0.5s ease; /* 0.5secondes et ease signifie linéaire*/
+
+}
+
+
+
+.nav-links.mobile-menu{
+
+margin-left:0;
+
+}
+
+.nav-links ul{
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+}
+
+.navbar .nav-links ul li{
+
+margin: 25px 0;
+
+font-size: 1.2em;
+
+}
+
+
+
+.navbar .logo{
+
+position: absolute;
+
+top: 50px;
+
+left: 50px;
+
+}
+
+
+
+.mobile-menu{ /* cela sert à cacher le volet lorsqu'il n'y a pas la classe mobile menu et l'afficher lorsqu'ele y est*/
+
+margin-left: 0;
+
+}
+
+
+}
+
+    
+.textshowcat {
+
+    color: white;
+    font-weight: bold;
+    filter: brightness(300%);
+    font-size: 1.2em;
+    
+}

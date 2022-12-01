@@ -1,6 +1,439 @@
+<!doctype html>
 
-<br>
-<div class="basket" style="text-align :center">
-<h1>votre panier</h1><br>
-<%= image_tag "cat1.jpg", width: 480, height: 300 %><br><br>
-</div>
+<html lang="fr">
+
+<head>
+
+     <meta charset="utf-8">
+
+     <title>Navbar</title>
+
+    <%= stylesheet_link_tag "application.css" %>
+    
+     <!-- CSS only -->
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<style>
+.navbar{
+
+position: sticky; /* permet de garder la nav collée en haut de l'ecran */
+
+top: 0;
+
+padding: 10px;
+
+display: flex; /* pour aligner les elements*/
+
+align-items: center;
+
+justify-content: space-between;
+
+width: 100%;
+
+box-sizing: border-box;
+
+}
+</style>
+
+
+</head>
+
+<body>
+
+<!---------------------------- navbar-------------------------------------------------------------------------->
+
+          <header>
+
+     <nav class="navbar">
+
+         <a href="#" class="logo">e-Kittens</a>
+
+          <div class="nav-links">
+
+                    <ul>
+
+              
+
+                   <li><%= link_to "welcome", cats_path %></li>
+
+                       
+
+  
+
+                    <% if user_signed_in? %>
+
+                    <li>
+
+                                   <i><%= link_to "Se déconnecter", destroy_user_session_path, style: "color:brown", method: :get %></i>
+
+                    </li>
+  
+
+                    <li>
+
+                         <%= link_to "Edit email / password", edit_user_registration_path %>
+
+                    </li>
+
+  
+
+               <% else %>
+
+                    <li>
+
+                        <%= link_to "Login", new_user_session_path %>
+
+                    </li>
+
+  
+
+                    <li>
+
+                         <%= link_to "Sign up", new_user_registration_path %> 
+
+                    </li>
+
+  
+
+               <% end %>
+
+               </ul>     
+
+               </div>
+
+               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/120px-Hamburger_icon.svg.png" alt="menu" class="menu-hamburger">
+
+               </nav> <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+              
+ <header>  
+      
+    <p><center><h1> Vous recherchez des photos de chatons?<pre> Ca tombe bien, nous en vendons</pre></h1><center></p>
+
+ </header>
+
+  <main>              
+  <div class="container">
+    
+    <div class="row row-cols-4 row-cols-md-3 col-sm-0 p-md-0 m-md-0 d-flex justify-content-center">
+    <div class="col-sm-12 col-12 col-md-4 ">
+        <a href="prod.html" class="card-clic"></a>
+        <div class="card border-secondary mb-4 card-index">
+          <a href="http://localhost:3000/cats/1">
+            <div class="card-header p-0">
+            <%= image_tag "cat1.jpg", width: 400, height: 400 %>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Ted</h4>
+              <p class="card-text">chat</p>
+              <p class="card-text">10 €</p>
+            </div>
+          </a>
+            <div class="card-footer">
+              <a href="prod.html" class="card-clic"></a>
+              <a class="btn btn-outline-dark mx-1 my-1" href="prod.html">Voir plus</a>
+                <a class="cart" data-method="PUT" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" >
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                  </svg>
+                </a>          
+            </div>
+        </div>
+      </div>
+    
+ 
+    
+    
+    <div class="col-sm-12 col-12 col-md-4 ">
+      <a href="#" class="card-clic"></a>
+      <div class="card border-secondary mb-4 card-index">
+        <a href="http://localhost:3000/cats/2">
+          <div class="card-header p-0">
+           <%= image_tag "cat2.jpg", width: 400, height: 400 %>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Taco</h4>
+            <p class="card-text">Race</p>
+            <p class="card-text">12.99 €</p>
+          </div>
+        </a>
+          <div class="card-footer">
+            <a href="#" class="card-clic"></a>
+            <a class="btn btn-outline-dark mx-1 my-1" href="#">Voir plus</a>
+              <a class="cart" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" float-right mt-3 mr-2>
+                  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                </svg>
+              </a> 
+          </div>
+        </div>
+      </div>
+    
+    <div class="col-sm-12 col-12 col-md-4">
+      <a href="#" class="card-clic"></a>
+      <div class="card border-secondary mb-4 card-index">
+        <a href="http://localhost:3000/cats/3">
+          <div class="card-header p-0">
+           <%= image_tag "cat3.jpg", width: 400, height: 400 %>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Tallim</h4>
+            <p class="card-text">Race</p>
+            <p class="card-text">15.99 €</p>
+          </div>
+        </a>
+        <div class="card-footer">
+          <a href="#" class="card-clic"></a>
+          <a class="btn btn-outline-dark mx-1 my-1" href="#">Voir plus</a>
+              <a class="cart">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" float-right mt-3 mr-2>
+                  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                </svg>
+              </a>          
+        </div>
+      </div>
+    </div>
+
+      <div class="col-sm-12 col-12 col-md-4 ">
+        <a href="#" class="card-clic"></a>
+        <div class="card border-secondary mb-4 card-index">
+          <a href="http://localhost:3000/cats/4">
+            <div class="card-header p-0">
+            <%= image_tag "cat4.jpg", width: 400, height: 400 %>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Tango</h4>
+              <p class="card-text">Race</p>
+              <p class="card-text">11.99 €</p>
+            </div>
+            </a>
+            <div class="card-footer">
+              <a href="#" class="card-clic"></a>
+              <a class="btn btn-outline-dark mx-1 my-1" href="#">Voir plus</a>
+                <a class="cart">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" float-right mt-3 mr-2>
+                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                  </svg>
+                </a>     
+            </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-12 col-md-4 ">
+        <a href="#" class="card-clic"></a>
+        <div class="card border-secondary mb-4 card-index">
+          <a href="http://localhost:3000/cats/5">
+            <div class="card-header p-0">
+            <%= image_tag "cat5.jpg", width: 400, height: 400 %>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">Tarya</h4>
+              <p class="card-text">Race</p>
+              <p class="card-text">9.99 €</p>
+            </div>
+          </a>
+            <div class="card-footer">
+              <a href="#" class="card-clic"></a>
+              <a class="btn btn-outline-dark mx-1 my-1" href="#">Voir plus</a>
+                  <a class="cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" float-right mt-3 mr-2>
+                      <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                    </svg>
+                  </a>         
+            </div>
+        </div>
+      </div>
+
+
+          <div class="col-sm-12 col-12 col-md-4 ">
+            <a href="#" class="card-clic"></a>
+            <div class="card border-secondary mb-4 card-index">
+              <a href="http://localhost:3000/cats/6">
+                <div class="card-header p-0">
+            <%= image_tag "cat6.jpg", width: 400, height: 400 %>                </div>
+                <div class="card-body">
+                  <h4 class="card-title">Toupie</h4>
+                  <p class="card-text">Race</p>
+                  <p class="card-text">9.99 €</p>
+                </div>
+              </a>
+              <div class="card-footer">
+                <a href="#" class="card-clic"></a>
+                  <a class="btn btn-outline-dark mx-1 my-1" href="#">Voir plus</a>
+                    <a class="cart">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" float-right mt-3 mr-2>
+                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                      </svg>
+                    </a>        
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-12 col-12 col-md-4 ">
+              <a href="#" class="card-clic"></a>
+                <div class="card border-secondary mb-4 card-index">
+                  <a href="http://localhost:3000/cats/7">
+                  <div class="card-header p-0">
+             <%= image_tag "cat7.jpg", width: 400, height: 400 %>                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title">Tana</h4>
+                    <p class="card-text">Race</p>
+                    <p class="card-text">13.99 €</p>
+                  </div>
+              </a>
+              <div class="card-footer">
+                <a href="#" class="card-clic"></a>
+                <a class="btn btn-outline-dark mx-1 my-1" href="#">Voir plus</a>
+                  <a class="cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" float-right mt-3 mr-2>
+                      <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+                    </svg>
+                  </a>         
+              </div>
+          </div>
+        </div>
+
+
+
+      <div class="col-sm-12 col-12 col-md-4 ">
+        <a href="#" class="card-clic"></a>
+        <div class="card border-secondary mb-4 card-index">
+          <a href="http://localhost:3000/cats/8">
+            <div class="card-header p-0">
+        <%= image_tag "cat8.jpg", width: 400, height: 400 %>            </div>
+            <div class="card-body">
+              <h4 class="card-title">Tamora</h4>
+              <p class="card-text">Siamois</p>
+              <p class="card-text">19.99 €</p>
+            </div>
+          </a>
+          <div class="card-footer">
+            <a href="#" class="card-clic"></a>
+            <a class="btn btn-outline-dark mx-1 my-1" href="#">Voir plus</a>
+            <a class="cart">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" float-right mt-3 mr-2>
+                <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+              </svg>
+            </a>          
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+    </div>
+  
+</main>
+
+    <script>
+
+                    const menuHamburger = document.querySelector(".menu-hamburger")
+
+                    const navLinks = document.querySelector(".nav-links")
+
+                    menuHamburger.addEventListener('click',()=>{
+
+                    navLinks.classList.toggle('mobile-menu')
+
+                    })
+
+</script>
+
+  
+
+</body>
+
+<!--------------------------------------------- Footer --------------------------------------------------------->
+  <footer class="text-center text-lg-start bg-white text-muted">
+         <hr>
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row lg-12">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    <i class="fas fa-gem me-3 text-secondary"></i>E-kittens
+                  </h6>
+                  
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    user
+                  </h6>
+                  <p>
+                    <a href="#!" class="text-reset">mon compte</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Mon panier</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    team
+                  </h6>
+                  <p>
+                    <a href="#!" class="text-reset">sarah</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">jonathan</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">kevin</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">jerry</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">mamoun</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">matthieu</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+        
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                  <p><i class="fas fa-home me-3 text-secondary"></i> FRANCE</p>
+                  <p>
+                    <i class="fas fa-envelope me-3 text-secondary"></i>
+                    info@example.com
+                  </p>
+                  <p><i class="fas fa-phone me-3 text-secondary"></i>+01.02.03.04.05</p>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
+        </div>
+          <!-- Section: Links  -->
+        
+          <!-- Copyright -->
+          <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+            retrouvez notre repo github:
+            <a class="text-reset fw-bold" href="https://github.com/JonathanSchafeitel/e-kittens">e-kittens</a>
+          </div>
+          
+          <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+
+
+</html>
+
+ 
